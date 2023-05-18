@@ -1,15 +1,18 @@
+import java.util.logging.Logger;
+
 public class usingCallByValue {
+    static final Logger logger = Logger.getLogger(usingCallByValue.class.getName());
 
 
    public static void callingValueFunction(int data){
         data = data+100;
-       System.out.println("while  calling function = " + data + '\n'); //value changes only in local variable
+       logger.info("while  calling function = " + data + '\n'); //value changes only in local variable
     }
 
     public static void main(String[] args) {
         int number =50;
-        System.out.println("Before calling function = " + number + "\n");
+       logger.info("Before calling function = " + number + "\n");
         callingValueFunction(number);
-        System.out.println("After calling function = " + number);
+       logger.info("After calling function = " + number);
     }
 }

@@ -1,3 +1,5 @@
+import java.util.logging.Logger;
+
 class Intwrapper{
     int value;
      public Intwrapper(int value){
@@ -8,16 +10,19 @@ class Intwrapper{
 
 public class usingCallByReference {
     public static void main(String[] args) {
+       final Logger logger = Logger.getLogger(usingCallByValue.class.getName());
         Intwrapper wrapper = new Intwrapper(10);
-        System.out.println("Before calling value = " + wrapper.value );
+
+      logger.info("Before calling value = " + wrapper.value );
         increment(wrapper);
-        System.out.println("After calling Value = " + wrapper.value);
+       logger.info("After calling Value = " + wrapper.value);
 
 
     }
     public static void increment(Intwrapper wrapper){
         wrapper.value++;
-        System.out.println("while calling function value = " + wrapper.value);
+        final Logger logger = Logger.getLogger(usingCallByValue.class.getName());
+      logger.info("while calling function value = " + wrapper.value);
 
     }
 }

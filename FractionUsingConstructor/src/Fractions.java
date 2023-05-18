@@ -1,6 +1,9 @@
+import java.util.logging.Logger;
+
 class Fraction {
     private int numerator;
     private int denominator;
+     private static final Logger logger=Logger.getLogger(Fractions.class.getName());
 
     public Fraction(int numerator, int denominator) {
         this.numerator = numerator;
@@ -16,14 +19,14 @@ class Fraction {
     }
 
     public void displayFraction() {
-        System.out.print(numerator + "/" + denominator);
+        //logger.info(numerator + "/" + denominator);
         double decimalValue = (double) numerator / denominator;
-        System.out.println( " = " + decimalValue);
+        logger.info( numerator + "/" + denominator + " = " + decimalValue);
     }
 
     public void displayDecimalValue() {
         double decimalValue = (double) numerator / denominator;
-        System.out.println( " = " + decimalValue);
+       logger.info( numerator + "/" + denominator + " = " + decimalValue);
     }
 }
 
